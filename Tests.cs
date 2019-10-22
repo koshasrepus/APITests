@@ -8,6 +8,12 @@ namespace RestSharpExamples.Tests
     [TestFixture]
     public class BasicTests
     {
+        #region
+        /// <summary>
+        /// Sends a request to receive breadcrumbs for the product.
+        /// </summary>
+        /// <param name="item_id">The product id.</param>
+        #endregion
         IRestResponse GetResponse(string item_id)
         {
             string direct = $"navi/v1/category/item-crumbs/{item_id}";
@@ -15,7 +21,13 @@ namespace RestSharpExamples.Tests
             RestRequest request = new RestRequest(direct, Method.GET);
             return client.Execute(request);
         }
-
+        #region
+        /// <summary>
+        /// Returns the field value from the server response.
+        /// </summary>
+        /// <param name="response">The server response.</param>
+        /// <param name="field">The JSON field.</param>
+        #endregion
 
         string ParseJason(IRestResponse response, string field)
         {
