@@ -38,7 +38,10 @@ namespace RestSharpExamples.Tests
         [Test]
         public void StatusCodeTest()
         {
-            string item_id = "1"; //id либо хардкодим в тесте, либо отдельным методом извлекаем из базы           
+            string item_id = "1"; 
+            /* Значение можно оставить захардкоженным, 
+            либо создать отдельный метод для извлечения его из бызы 
+            */
             // act
             IRestResponse response = GetResponse(item_id);
             // assert
@@ -92,9 +95,10 @@ namespace RestSharpExamples.Tests
         {
             string item_id = "0";
             #region
-            /*id либо хардкодим в тесте, либо отдельным методом извлекаем из базы. 
-              В данном случае заодно проверяем
-              граничное значение*/
+            /* id можно оставить захардкоженным, 
+             либо создать отдельный метод для извлечения его из бызы 
+             В данном случае заодно проверяем
+             граничное значение*/
             #endregion
             // act
             IRestResponse response = GetResponse(item_id);
